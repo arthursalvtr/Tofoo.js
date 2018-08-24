@@ -13,23 +13,26 @@
         <div>
             <label for="name">
                 Name: 
-                <input type="text" f-model="name">
+                <input type="text" T-model="name">
             </label>
-            <h1>Result: <span f-bind="name"></span></h1>
+            <h1>Result: <span T-bind="name"></span></h1>
         </div>
         <div>
             <label for="age">
                 Age:
-                <input type="text" f-model="age">
+                <input type="text" T-model="age">
             </label>
-            <h1>Result: <span f-bind="age"></span></h1>
+            <h1>Result: <span T-bind="age"></span></h1>
         </div>
         <div>
             <button id="addRow">
                 add row
             </button>
             <ul>
-                <li id="for" f-for="members in member">{member.name} - {member.id}</li>
+                <li id="for" T-for="members in member">{member.name} - {member.id}</li>
+            </ul>
+            <ul>
+                <li id="for" T-for="users in user">{user.name} - {user.age}</li>
             </ul>
         </div>
     </div>

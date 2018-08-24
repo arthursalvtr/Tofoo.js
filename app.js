@@ -9,6 +9,11 @@ let Tofoojs = new Tofoo("#app", {
         {id: 2, name: 'Sanji', },
         {id: 3, name: 'Zoro', },
     ],
+    users: [
+        {age: 21, name: 'Nami', },
+        {age: 22, name: 'Usop', },
+        {age: 23, name: 'Brook', },
+    ],
 })
 Tofoojs.watch('name', _ => console.log(Tofoojs.data.name))
 Tofoojs.watch('members', _ => {
