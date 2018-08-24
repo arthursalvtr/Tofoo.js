@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to Tofoo.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Hello World</h1>
+    <h2>Tofoo.js Playground</h1>
+    <div id="app">
+        <div>
+            <label for="name">
+                Name: 
+                <input type="text" f-model="name">
+            </label>
+            <h1>Result: <span f-bind="name"></span></h1>
+        </div>
+        <div>
+            <label for="age">
+                Age:
+                <input type="text" f-model="age">
+            </label>
+            <h1>Result: <span f-bind="age"></span></h1>
+        </div>
+        <div>
+            <button id="addRow">
+                add row
+            </button>
+            <ul>
+                <li id="for">HAHA</li>
+                <li>HEHE</li>
+                <li>HOHO</li>
+            </ul>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+    <script>
+        (function (){
+            query = selector => document.querySelector(selector)
+            const li = query('#for')
+            const button = query('#addRow')
+            const addRow = event => {
+                li.parentElement.appendChild(li.cloneNode(true))
+            }
+            button.addEventListener('click', addRow)
+        })()
+    </script>
+</body>
+</html>
