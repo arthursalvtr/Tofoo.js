@@ -1,5 +1,5 @@
 import Tofoo from "./Tofoo.js"
-
+"use strict";
 let Tofoojs = new Tofoo("#app", {
     name: 'Eric',
     age: 123,
@@ -15,9 +15,11 @@ Tofoojs.watch('members', _ => {
     console.log('members updated')
     console.log(Tofoojs.data.members)
 })
-document.querySelector('#add').addEventListener('click', function () {
-    console.log('button click')
-    Tofoojs.data.name = 'hahaha'
-    Tofoojs.data.members.push({ id: 1, name: "Eric" })
-})
+const query = selector => document.querySelector(selector)
+const button = query('#addRow')
+const addRow = event => {
+    Tofoojs.data.members.push({id: 1, name: 'HAHA'})
+}
+button.addEventListener('click', addRow)
 
+export default Tofoojs

@@ -29,22 +29,25 @@
                 add row
             </button>
             <ul>
-                <li id="for">HAHA</li>
-                <li>HEHE</li>
-                <li>HOHO</li>
+                <li id="for" f-for="members in member">{member.name} - {member.id}</li>
             </ul>
         </div>
     </div>
     <script type="module" src="app.js"></script>
-    <script>
+    <script type="module" src="test.js"></script>
+    <script type="module">
+        import { Hello } from "./test.js";
         (function (){
-            query = selector => document.querySelector(selector)
-            const li = query('#for')
-            const button = query('#addRow')
-            const addRow = event => {
-                li.parentElement.appendChild(li.cloneNode(true))
-            }
-            button.addEventListener('click', addRow)
+            // console.log(Hello);
+            
+            // "use strict"
+            // const query = selector => document.querySelector(selector)
+            // const li = query('#for')
+            // const button = query('#addRow')
+            // const addRow = event => {
+            //     li.parentElement.appendChild(li.cloneNode(true))
+            // }
+            // button.addEventListener('click', addRow)
         })()
     </script>
 </body>
